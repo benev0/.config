@@ -1,7 +1,8 @@
 # Ignore all by default
 *
 
+#hyprland
 !hypr
 !hypr/*
 !hypr/hyprland/*
-
+!hypr/script/*
