@@ -6,3 +6,7 @@
 !hypr/*
 !hypr/hyprland/*
 !hypr/script/*
+
+#home-manager
+!home-manager
+!home-manager/*
