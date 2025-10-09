@@ -5,7 +5,7 @@
   # manage.
   home.username = "ben";
   home.homeDirectory = "/home/ben";
- 
+
   nixpkgs = {
     config = {
       allowUnfree = true;
@@ -22,7 +22,7 @@
   # release notes.
 
   home.stateVersion = "24.11"; # Please read the comment before changing.
-  
+
   # The home.packages option allows you to install Nix packages into your
   # environment.
   home.packages = [
@@ -36,24 +36,6 @@
     pkgs.obsidian
     pkgs.discord
   ];
-
-  home.activation.copyDesktopFiles = lib.hm.dag.entryAfter ["installPackages"] ''
-    if [ "$XDG_CURRENT_DESKTOP" = "GNOME" ]; then
-
-      if [ ! -d "${config.home.homeDirectory}/.local/share/applications" ]; then
-        mkdir "${config.home.homeDirectory}/.local/share/applications"
-      fi
-
-      if [ -d "${config.home.homeDirectory}/.local/share/applications/nix" ]; then
-        rm -rf "${config.home.homeDirectory}/.local/share/applications/nix"
-      fi
-
-      ln -sf "${config.home.homeDirectory}/.nix-profile/share/applications" \
-        ${config.home.homeDirectory}/.local/share/applications/nix
-
-    fi
-  '';
-
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
   # plain files is through 'home.file'.
