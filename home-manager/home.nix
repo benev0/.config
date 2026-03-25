@@ -35,6 +35,8 @@
     pkgs.vscode-fhs
     pkgs.obsidian
     pkgs.discord
+    pkgs.gnomeExtensions.gpu-supergfxctl-switch
+    pkgs.kicad
   ];
 
   # Home Manager is pretty good at managing dotfiles. The primary way to manage
